@@ -4,10 +4,10 @@ import java.io.*;
 
 public class 알파벳개수 {
   public static void main(String[] args) throws IOException{
-    BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-    char[] arr = bf.readLine().toCharArray();
+    char[] arr = br.readLine().toCharArray();
 
     int[] result = new int[26];
 
