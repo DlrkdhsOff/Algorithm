@@ -29,6 +29,5 @@ public class 설탕배달 {
     bw.write("-1\n");
     bw.flush();
   }
-  }
 
 }
