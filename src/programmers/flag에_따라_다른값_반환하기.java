@@ -1,6 +1,6 @@
 package programmers;
 
-public class flag에따라다른값반환하기 {
+public class flag에_따라_다른값_반환하기 {
   public static void main(String[] args) {
     System.out.println(solution(1, 3, true));
   }
