@@ -1,4 +1,4 @@
-package programmers;
+package programmers.level0;
 
 public class 공배수 {
   public static void main(String[] args) {
