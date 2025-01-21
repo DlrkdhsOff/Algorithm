@@ -10,7 +10,7 @@ public class 더_크게_합치기 {
     int A = Integer.parseInt(a + "" + b);
     int B = Integer.parseInt(b + "" + a);
 
-    return A >= B ? A : B;
+    return Math.max(A, B);
   }
 
 }
