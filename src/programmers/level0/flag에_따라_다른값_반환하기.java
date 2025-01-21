@@ -1,4 +1,4 @@
-package programmers;
+package programmers.level0;
 
 public class flag에_따라_다른값_반환하기 {
   public static void main(String[] args) {
