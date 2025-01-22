@@ -3,7 +3,7 @@ package Beakjoon;
 import java.io.*;
 import java.util.StringTokenizer;
 
-public class 구간합구하기4 {
+public class 구간_합_구하기4 {
   public static void main(String[] args) throws IOException {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
