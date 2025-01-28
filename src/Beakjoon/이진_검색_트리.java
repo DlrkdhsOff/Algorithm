@@ -53,6 +53,7 @@ class BinarySearchTree {
 }
 
 public class 이진_검색_트리 {
+  
   public static void main(String[] args) throws IOException {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     String line;
