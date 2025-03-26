@@ -9,29 +9,28 @@ public class 교점에_별_만들기 {
   }
 
   public String[] solution(int[][] line) {
-    int lineCount = line.length;
 
-    HashSet<String> intersectionPoints = new HashSet<>();
+    HashSet<String> intersection = new HashSet<>();
 
     long maxX = Long.MIN_VALUE, maxY = Long.MIN_VALUE;
     long minX = Long.MAX_VALUE, minY = Long.MAX_VALUE;
 
-    for (int i = 0; i < lineCount; i++) {
-      for (int j = i + 1; j < lineCount; j++) {
+    for (int i = 0; i < line.length; i++) {
+      for (int j = i + 1; j < line.length; j++) {
         int[] lineA = line[i];
         int[] lineB = line[j];
 
-        long denominator = (long)lineA[0] * lineB[1] - (long)lineA[1] * lineB[0];
+        long denom = (long)lineA[0] * lineB[1] - (long)lineA[1] * lineB[0];
 
-        if (0 != denominator) {
-          long xNumerator = (long)lineA[1] * lineB[2] - (long)lineA[2] * lineB[1];
-          long yNumerator = (long)lineA[2] * lineB[0] - (long)lineA[0] * lineB[2];
+        if (0 != denom) {
+          long x = (long)lineA[1] * lineB[2] - (long)lineA[2] * lineB[1];
+          long y = (long)lineA[2] * lineB[0] - (long)lineA[0] * lineB[2];
 
-          if (0 == xNumerator % denominator && 0 == yNumerator % denominator) {
-            long intersectionX = xNumerator / denominator;
-            long intersectionY = yNumerator / denominator;
+          if (0 == x % denom && 0 == y % denom) {
+            long intersectionX = x / denom;
+            long intersectionY = y / denom;
 
-            intersectionPoints.add(intersectionX + "," + intersectionY);
+            intersection.add(intersectionX + "," + intersectionY);
 
             maxX = Math.max(maxX, intersectionX);
             maxY = Math.max(maxY, intersectionY);
@@ -44,26 +43,32 @@ public class 교점에_별_만들기 {
 
     boolean[][] starMap = new boolean[(int)(maxY - minY + 1)][(int)(maxX - minX + 1)];
 
-    for (String point : intersectionPoints) {
-      int commaIndex = point.indexOf(",");
+    for (String point : intersection) {
+      int index = point.indexOf(",");
 
-      long pointX = Long.parseLong(point, 0, commaIndex, 10);
-      long pointY = Long.parseLong(point, commaIndex + 1, point.length(), 10);
+      // Long.parseLong(String s, int beginIndex, int endIndex, int radix)
+      // s : 파싱할 문자열
+      // beginIndex : 파싱을 시작할 문자열의 시작 인덱스
+      // endIndex : 파싱을 끝낼 문자열의 끝 인덱스
+      // radix : 변환할 때 사용할 진수
+      long pointX = Long.parseLong(point, 0, index, 10);
+      long pointY = Long.parseLong(point, index + 1, point.length(), 10);
 
       starMap[(int)(maxY - pointY)][(int)(pointX - minX)] = true;
     }
 
-    String[] answer = new String[(int)(maxY - minY + 1)];
+    String[] result = new String[(int)(maxY - minY + 1)];
 
-    StringBuilder stringBuilder = new StringBuilder();
+
     for (int i = 0; i < maxY - minY + 1; i++) {
-      for (int j = 0; j < maxX - minX + 1; j++)
-        stringBuilder.append(starMap[i][j] ? '*' : '.');
+      StringBuilder sb = new StringBuilder();
+      for (int j = 0; j < maxX - minX + 1; j++) {
+        sb.append(starMap[i][j] ? '*' : '.');
+      }
 
-      answer[i] = stringBuilder.toString();
-      stringBuilder.setLength(0);
+      result[i] = sb.toString();
     }
 
-    return answer;
+    return result;
   }
 }
