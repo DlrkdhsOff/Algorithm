@@ -5,31 +5,18 @@ import java.util.Arrays;
 public class 행렬의_곱셈 {
 
   public static void main(String[] args) {
-    행렬의_곱셈 solution = new 행렬의_곱셈();
 
-    // 테스트 케이스 1
     int[][] arr1 = {{1, 4}, {3, 2}, {4, 1}};
     int[][] arr2 = {{3, 3}, {3, 3}};
-    int[][] result1 = solution(arr1, arr2);
-    System.out.println("테스트 케이스 1 결과:");
-    result(result1);
 
-    // 테스트 케이스 2
-    int[][] arr3 = {{2, 3, 2}, {4, 2, 4}, {3, 1, 4}};
-    int[][] arr4 = {{5, 4, 3}, {2, 4, 1}, {3, 1, 1}};
-    int[][] result2 = solution(arr3, arr4);
-    System.out.println("테스트 케이스 2 결과:");
-    result(result2);
+//    int[][] arr1 = {{2, 3, 2}, {4, 2, 4}, {3, 1, 4}};
+//    int[][] arr2 = {{5, 4, 3}, {2, 4, 1}, {3, 1, 1}};
+//
+//    int[][] arr1 = {{1, 2, 3}, {4, 5, 6}};
+//    int[][] arr2 = {{1, 4}, {2, 5}, {3, 6}};
 
-    // 추가 테스트 케이스 3
-    int[][] arr5 = {{1, 2, 3}, {4, 5, 6}};
-    int[][] arr6 = {{1, 4}, {2, 5}, {3, 6}};
-    int[][] result3 = solution(arr5, arr6);
-    System.out.println("테스트 케이스 3 결과:");
-    result(result3);
-  }
+    int[][] result = solution(arr1, arr2);
 
-  private static void result(int[][] result) {
     for (int[] i : result) {
       System.out.println(Arrays.toString(i));
     }

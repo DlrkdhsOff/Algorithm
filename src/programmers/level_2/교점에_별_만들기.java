@@ -6,9 +6,23 @@ public class 교점에_별_만들기 {
 
   public static void main(String[] args) {
 
+    int[][] lines = {{2, -1, 4}, {-2, -1, 4}, {0, -1, 1}, {5, -8, -12}, {5, 8, 12}};
+
+//    int[][] lines = {{0, 1, -1}, {1, 0, -1}, {1, 0, 1}};
+
+//    int[][] lines = {{1, -1, 0}, {2, -1, 0}};
+
+//    int[][] lines = {{1, -1, 0}, {2, -1, 0}, {4, -1, 0}};
+
+    String[] result = solution(lines);
+
+    for (String line : result) {
+      System.out.println(line);
+    }
   }
 
-  public String[] solution(int[][] line) {
+
+  public static String[] solution(int[][] line) {
 
     HashSet<String> intersection = new HashSet<>();
 
