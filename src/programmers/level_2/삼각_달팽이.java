@@ -5,8 +5,12 @@ import java.util.Arrays;
 public class 삼각_달팽이 {
 
   public static void main(String[] args) {
-    System.out.println("result: " + Arrays.toString(solution(6)));
+    int n = 6;
+
+//    int n = 10;
+    System.out.println(Arrays.toString(solution(n)));
   }
+
   public static int[] solution(int n) {
     int[] result = new int[n * (n + 1) / 2];
     int[][] arr = new int[n][n];
