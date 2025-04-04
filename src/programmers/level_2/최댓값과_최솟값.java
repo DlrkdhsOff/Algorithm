@@ -19,5 +19,4 @@ public class 최댓값과_최솟값 {
 
     return arr[0] + " " + arr[arr.length-1];
   }
-
 }
