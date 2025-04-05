@@ -50,6 +50,7 @@ public class 거리두기_확인하기 {
     return 1;
   }
 
+
   public static boolean validation(String[][] place, int row, int col) {
 
     for (int i = Math.max(0, row - 2); i <= Math.min(4, row + 2); i++) {
